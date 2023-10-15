@@ -1,0 +1,24 @@
+name: Build on Push
+on:
+  push:
+    branches:
+      - master # Change this to your main branch name
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check Out Repository
+        uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: |
+          # Replace this with the command to install your project's dependencies
+          npm install
+
+      - name: Build
+        run: |
+          # Replace this with the command to build your project
+          npm run build
